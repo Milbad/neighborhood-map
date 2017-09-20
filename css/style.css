@@ -1,0 +1,166 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Walter Turncoat', cursive;
+}
+
+#map {
+    height: 60%;
+}
+
+#filtering_option {
+    width: 100%;
+    display: flex;
+}
+
+#select_a_city {
+    width: 100%;
+}
+
+h1 {
+    font-size: 20px;
+    width: 50%;
+    margin: 13px;
+    text-align: end;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+li {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#info-title {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#yelp-address {
+    font-size: 12px;
+    margin: 0;
+    display: inline-flex;
+}
+
+#yelp-rating {
+    width: 100%;
+}
+
+#yelp-rating-title {
+    font-size: 12px;
+    margin-right: 15px;
+}
+
+#img-yelp-rating {
+    width: 65%;
+    margin-top: 9px;
+}
+
+#yelp-img {
+    display: block;
+    margin-top: 10px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#container2 {
+    display: -webkit-inline-box;
+}
+
+#nav-icon {
+    display: none;
+}
+
+#navigation {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #0091ff;
+    overflow-x: hidden;
+    padding-top: 30px;
+    transition: 0.5s;
+}
+
+#navigation li {
+    padding: 5px 5px 5px 10px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #000000;
+    display: block;
+    transition: 0.3s;
+}
+
+#navigation li:hover {
+    text-decoration: underline;
+}
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 30px;
+    margin-left: 50px;
+    color: #000000;
+    text-decoration: none;
+}
+
+#navigation.displaylist {
+    width: 200px;
+}
+
+#container.displaylist, #map.displaylist {
+    margin-left: 200px;
+}
+
+#nav-icon {
+    display: block;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 700px) {
+    #filtering_option {
+        width: 100%;
+        display: flex;
+    }
+
+    #select_a_city {
+        width: 110px;
+    }
+
+    h1 {
+        font-size: 14px;
+        width: 30%;
+        margin-left: 10px;
+        margin-top: 16px;
+    }
+
+    #yelp-img {
+        display: none;
+    }
+
+    .closebtn {
+        font-size: 28px;
+    }
+
+    #navigation.displaylist {
+        width: 150px;
+    }
+
+    #navigation li {
+        font-size: 12px;
+    }
+
+    #container.displaylist, #map.displaylist {
+        margin-left: 150px;
+    };
+}
