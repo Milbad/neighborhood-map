@@ -255,9 +255,11 @@
              dataType: 'jsonp',
              success: function(results) {
                  var businessImg = results.image_url;
+                 var snippetText = results.snippet_text;
                  var businessRating = results.rating_img_url_large;
                  var businessLocation = results.location.display_address;
-                 var content = '<h2>' + title + '</h2><div id="yelp-address">Address: ' + businessLocation + '</div><div><img id="yelp-img" alt="business image" src="' + businessImg + '"></div><br><div id="container2"><h2 id="yelp-rating-title">Yelp Rating: </h2><img id="img-yelp-rating" alt="rating yelp" src="' + businessRating + '"></div>';
+                 var content = '<h2>' + title + '</h2><div id="yelp-address">Address: ' + businessLocation + '</div><div><img id="yelp-img" alt="business image" src="' + businessImg + '"></div><a href="https://www.yelp.com"><img id="yelp-logo" alt="yelp logo" src="img/Yelp_trademark_RGB.png"></a><br><div id="container2"><div class="rating"><h2 id="yelp-rating-title">Yelp Rating: </h2><img id="img-yelp-rating" alt="rating yelp" src="' + businessRating + '"></div>\
+                 <div class="review-snippet"><h2 id="yelp-review-snippet_title">review snippet: </h2><p><i>'+snippetText+'</i></p></div></div>';
                  infowindow.setContent(content);
 
                  // AN ERROR FUNCTION
@@ -273,7 +275,7 @@
          var style = [{
                  featureType: 'water',
                  stylers: [{
-                     color: '#bdf5f6'
+                     color: 'dodgerblue'
                  }]
              },
              {
@@ -308,7 +310,7 @@
 
          // Create an infowindow
          newInfoWindow = new google.maps.InfoWindow({
-             maxWidth: '200'
+             maxWidth: '400'
          });
 
 
