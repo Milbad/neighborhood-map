@@ -254,10 +254,14 @@
              cache: true,
              dataType: 'jsonp',
              success: function(results) {
-                 var businessImg = results.image_url;
-                 var snippetText = results.snippet_text;
-                 var businessRating = results.rating_img_url_large;
-                 var businessLocation = results.location.display_address;
+                 var businessRating;
+                 var businessImg;
+                 var snippetText;
+                 var businessLocation;
+                 results.image_url ?  businessImg = results.image_url : businessImg = 'No image available';
+                 results.snippet_text ?  snippetText = results.snippet_text : snippetText = 'No review available';
+                 results.rating_img_url_large ?  businessRating = results.rating_img_url_large : businessRating = 'No rating available';
+                 results.location.display_address ?  businessLocation = results.location.display_address : businessLocation = 'No location available';
                  var content = '<h2>' + title + '</h2><div id="yelp-address">Address: ' + businessLocation + '</div><div><img id="yelp-img" alt="business image" src="' + businessImg + '"></div><a href="https://www.yelp.com"><img id="yelp-logo" alt="yelp logo" src="img/Yelp_trademark_RGB.png"></a><br><div id="container2"><div class="rating"><h2 id="yelp-rating-title">Yelp Rating: </h2><img id="img-yelp-rating" alt="rating yelp" src="' + businessRating + '"></div>\
                  <div class="review-snippet"><h2 id="yelp-review-snippet_title">review snippet: </h2><p><i>'+snippetText+'</i></p></div></div>';
                  infowindow.setContent(content);
@@ -310,7 +314,8 @@
 
          // Create an infowindow
          newInfoWindow = new google.maps.InfoWindow({
-             maxWidth: '400'
+             maxWidth: '400',
+             disableAutoPan: false
          });
 
 
