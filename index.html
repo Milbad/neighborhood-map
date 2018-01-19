@@ -8,6 +8,10 @@
     <title>Neighborhood Map Project</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet">
+    <link rel="stylesheet" href="jasmine/lib/jasmine-2.1.2/jasmine.css">
+    <script src="jasmine/lib/jasmine-2.1.2/jasmine.js"></script>
+    <script src="jasmine/lib/jasmine-2.1.2/jasmine-html.js"></script>
+    <script src="jasmine/lib/jasmine-2.1.2/boot.js"></script>
 </head>
 
 <body>
@@ -28,8 +32,8 @@
         <div id="navigation" data-bind="css: { displaylist: isVisible}">
             <a href="javascript:void(0)" class="closebtn" data-bind="click: closeNav">&times;</a>
             <!-- ko ifnot:  selectedValue-->
-            <div id="location-list" data-bind="foreach: restaurantsList">
-                <ul>
+            <div id="location-list">
+                <ul data-bind="foreach: restaurantsList">
                     <li data-bind="click: $parent.updateCurrentLocation, text: title"></li>
                 </ul>
             </div>
@@ -52,6 +56,7 @@
     <script src="js/app.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBnh43Txj8quZdddxc_w9OSSFDGqztLrxU&callback=initMap" onerror="initMapError()">
     </script>
+     <script src="jasmine/spec/feedreader.js"></script>
 </body>
 
 </html>
